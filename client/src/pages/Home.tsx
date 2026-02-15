@@ -3,7 +3,7 @@ import { useListings } from "@/hooks/use-listings";
 import { ListingCard } from "@/components/ListingCard";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Search, ArrowRight, Home as HomeIcon, Key, Building2 } from "lucide-react";
+import { Search, ArrowRight, Home as HomeIcon, Key, Building2, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
