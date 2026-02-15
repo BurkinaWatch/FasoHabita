@@ -1,0 +1,231 @@
+une vraie application immobilière professionnelle FasoHabita (Votre maison, à portée de clic.)**, pensée pour inspirer **sérieux, confiance et efficacité**, exactement comme une agence moderne… mais digitale.
+
+ En **4 blocs clairs** :
+1️⃣ Vision & positionnement
+2️⃣ Fonctionnalités clés (utilisateurs, annonces, visiteurs)
+3️⃣ Structure des annonces (basée sur ton texte)
+4️⃣ Design, catégories & filtres (UX vendeur)
+
+---
+
+## 1️⃣ Vision de l’application FasoHabita
+
+🎯 **Objectif**
+Créer une **plateforme immobilière de référence** (location & vente) où :
+
+* des **utilisateurs connectés** publient des biens,
+* des **visiteurs** recherchent, filtrent et contactent facilement,
+* tout respire **professionnalisme, sécurité et crédibilité**.
+
+👉 Ce n’est PAS un simple site de petites annonces Facebook.
+👉 C’est une **marketplace immobilière sérieuse**, locale, moderne.
+
+---
+
+## 2️⃣ Rôles & fonctionnalités principales
+
+### 👤 A. Utilisateurs (propriétaires / agences / démarcheurs)
+
+Fonctionnalités :
+
+* Création de compte (téléphone, email, WhatsApp)
+* Tableau de bord personnel
+* Publication d’annonces :
+
+  * Location
+  * Vente
+* Ajout de :
+
+  * photos (illimité ou limité selon plan)
+  * vidéos (très important pour la confiance)
+* Modification / suppression d’annonces
+* Marquage :
+
+  * **Disponible**
+  * **Loué**
+  * **Vendu**
+
+💡 Option pro plus tard :
+
+* Badge “Annonce vérifiée”
+* Mise en avant payante
+
+---
+
+### 👥 B. Visiteurs (sans compte)
+
+* Navigation libre
+* Recherche par :
+
+  * type de bien
+  * quartier
+  * prix
+* Consultation des détails
+* Contact direct :
+
+  * appel
+  * WhatsApp
+* Pas besoin de compte pour contacter (très important en Afrique)
+
+---
+
+## 3️⃣ Structure idéale d’une annonce (basée sur ton texte)
+
+Ton texte est EXCELLENT. Il doit devenir un **modèle standardisé**.
+
+### 🏡 Exemple de fiche annonce
+
+**Titre**
+
+> Maison neuve à louer – Karpala (vers Gira Imana)
+
+**Type**
+
+* Location / Vente
+
+**Catégorie**
+
+* Maison
+* Villa
+* Résidence meublée
+* Appartement
+* Cour commune
+* Bureau
+* Magasin
+* Boutique
+* Kiosque
+* Restaurant
+  (évolutif)
+
+---
+
+### 🔑 Caractéristiques
+
+(champs structurés + affichage stylé)
+
+* 🛏️ Chambres : 2
+* 🛋️ Salon : 1
+* 🚿 Douches : 2
+* 🍽️ Salle à manger : Oui
+* 🍳 Cuisine intérieure : Oui
+* 🚗 Garage : Oui (1 véhicule)
+* 📌 Cour : unique et sécurisée
+
+---
+
+### 🧱 Équipements (cases à cocher)
+
+* Carrelée ✅
+* Plafonnée ✅
+* Ventilée ✅
+* Vitrée ✅
+* Climatisée ✅
+
+---
+
+### 📍 Localisation
+
+* Ville : Ouagadougou
+* Quartier : Karpala
+* Repère : vers Gira Imana
+* Carte (Google Maps / OpenStreetMap)
+
+---
+
+### 💰 Conditions
+
+* Loyer : **150 000 FCFA / mois**
+* Frais de visite : **2 000 FCFA**
+* Disponible : Oui
+
+---
+
+### 📞 Contact
+
+* Téléphone : 74912792 / 02038534
+* Bouton WhatsApp direct
+* Bouton “Programmer une visite”
+
+---
+
+### 🎥 Médias
+
+* Galerie photos (plein écran)
+* Vidéo de présentation
+  (énorme facteur de conversion)
+
+---
+
+## 4️⃣ Catégories & filtres (clé du succès)
+
+### 🗂️ Catégories principales
+
+* Villas
+* Résidences meublées
+* Appartements
+* Maisons simples
+* Cours communes
+* Bureaux
+* Magasins
+* Boutiques
+* Kiosques
+* Restaurants
+
+---
+
+### 🔍 Filtres puissants
+
+* Quartier
+* Prix min / max
+* Location / Vente
+* Nombre de chambres
+* Garage (oui/non)
+* Climatisation
+* Maison neuve
+* Meublée / non meublée
+
+👉 Résultat : l’utilisateur trouve **rapidement** ce qu’il cherche.
+
+---
+
+## 🎨 Design & identité visuelle
+
+### Style recommandé
+
+* Moderne
+* Classe
+* Minimaliste
+* Couleurs sobres (bleu foncé, vert foncé, beige, blanc)
+* Icônes claires
+* Grandes images
+
+### Inspirations UX
+
+* Airbnb (clarté)
+* Jumia House (structure)
+* SeLoger / Bien’ici (crédibilité)
+
+---
+
+## 🔥 Fonctionnalités avancées (après V1)
+
+* Favoris ❤️
+* Partage WhatsApp/Facebook
+* Annonces “Urgent”
+* Paiement en ligne pour boost
+* Admin panel (validation des annonces)
+* Statistiques de vues
+
+---
+
+## 🧠 En résumé
+
+c'est un **projet très solide**, parfaitement adapté au marché local.
+Avec :
+
+* un bon branding,
+* une UX fluide,
+* et des annonces bien structurées,
+
+👉 cette application doit devenir **la référence immobilière locale**.
+

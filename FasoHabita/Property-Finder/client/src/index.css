@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Playfair Display', serif;
+
+  /* Color Palette: Dark Blue, Forest Green, Beige, White */
+  
+  /* Background: Off-white/Beige for warmth */
+  --background: 60 30% 98%;
+  --foreground: 214 74% 16%; /* Dark Blue Text */
+
+  /* Primary: Dark Blue (#0B2447) */
+  --primary: 214 74% 16%;
+  --primary-foreground: 60 56% 91%;
+
+  /* Secondary: Forest Green (#193A32) - for accents/success */
+  --secondary: 165 39% 25%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* Muted/Beige (#F5F5DC) */
+  --muted: 60 20% 92%;
+  --muted-foreground: 214 20% 45%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 214 74% 16%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 214 74% 16%;
+
+  --border: 214 20% 85%;
+  --input: 214 20% 85%;
+  
+  --accent: 35 60% 90%; /* Warm highlight */
+  --accent-foreground: 214 74% 16%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --ring: 214 74% 16%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Inverse for dark mode if needed, but real estate apps usually bright */
+  --background: 214 74% 10%;
+  --foreground: 60 30% 98%;
+  --primary: 214 74% 16%; 
+  --primary-foreground: 60 56% 91%;
+  --card: 214 60% 12%;
+  --card-foreground: 60 30% 98%;
+  --border: 214 40% 25%;
+  --input: 214 40% 25%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-primary;
+  }
+}
+
+/* Custom Utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
