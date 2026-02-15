@@ -8,53 +8,51 @@
   --font-body: 'DM Sans', sans-serif;
   --font-display: 'Playfair Display', serif;
 
-  /* Color Palette: Dark Blue, Forest Green, Beige, White */
-  
-  /* Background: Off-white/Beige for warmth */
-  --background: 60 30% 98%;
-  --foreground: 214 74% 16%; /* Dark Blue Text */
+  /* Color Palette 2026: Earthy Burkina Tones */
+  /* Warm Sand/Beige */
+  --background: 35 30% 98%;
+  --foreground: 24 40% 10%; /* Deep Earth Brown */
 
-  /* Primary: Dark Blue (#0B2447) */
-  --primary: 214 74% 16%;
-  --primary-foreground: 60 56% 91%;
+  /* Primary: Burkina Saffron/Terracotta (#D47B1E) */
+  --primary: 32 75% 47%;
+  --primary-foreground: 60 30% 98%;
 
-  /* Secondary: Forest Green (#193A32) - for accents/success */
-  --secondary: 165 39% 25%;
+  /* Secondary: Sahel Green (#2D5A27) */
+  --secondary: 112 39% 25%;
   --secondary-foreground: 0 0% 100%;
 
-  /* Muted/Beige (#F5F5DC) */
-  --muted: 60 20% 92%;
-  --muted-foreground: 214 20% 45%;
+  /* Muted/Clay (#E2D1C3) */
+  --muted: 24 25% 90%;
+  --muted-foreground: 24 20% 40%;
 
   --card: 0 0% 100%;
-  --card-foreground: 214 74% 16%;
+  --card-foreground: 24 40% 10%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 214 74% 16%;
+  --popover-foreground: 24 40% 10%;
 
-  --border: 214 20% 85%;
-  --input: 214 20% 85%;
+  --border: 24 20% 88%;
+  --input: 24 20% 88%;
   
-  --accent: 35 60% 90%; /* Warm highlight */
-  --accent-foreground: 214 74% 16%;
+  --accent: 45 80% 90%; /* Golden highlight */
+  --accent-foreground: 24 40% 10%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --ring: 214 74% 16%;
-  --radius: 0.5rem;
+  --ring: 32 75% 47%;
+  --radius: 1rem; /* Generous 2026 rounding */
 }
 
 .dark {
-  /* Inverse for dark mode if needed, but real estate apps usually bright */
-  --background: 214 74% 10%;
-  --foreground: 60 30% 98%;
-  --primary: 214 74% 16%; 
-  --primary-foreground: 60 56% 91%;
-  --card: 214 60% 12%;
-  --card-foreground: 60 30% 98%;
-  --border: 214 40% 25%;
-  --input: 214 40% 25%;
+  --background: 24 40% 5%;
+  --foreground: 35 30% 98%;
+  --primary: 32 75% 47%; 
+  --primary-foreground: 60 30% 98%;
+  --card: 24 40% 8%;
+  --card-foreground: 35 30% 98%;
+  --border: 24 30% 15%;
+  --input: 24 30% 15%;
 }
 
 @layer base {
@@ -67,19 +65,29 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-primary;
+    @apply font-bold tracking-tight text-foreground;
   }
 }
 
-/* Custom Utilities */
-.text-balance {
-  text-wrap: balance;
+/* 2026 UI Trends & Burkina Patterns */
+.pattern-danfani {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(212, 123, 30, 0.05) 10px,
+    rgba(212, 123, 30, 0.05) 20px
+  );
 }
 
 .glass-panel {
-  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
 }
 
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  @apply transition-all duration-500 hover:shadow-[0_20px_50px_rgba(212,123,30,0.1)] hover:-translate-y-2;
+}
+
+.btn-modern {
+  @apply relative overflow-hidden transition-all duration-300 active:scale-95 hover:brightness-110;
 }

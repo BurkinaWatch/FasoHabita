@@ -18,71 +18,71 @@ export function ListingCard({ listing, className }: ListingCardProps) {
   const imageUrl = mainImage?.url || placeholderImage;
 
   return (
-    <div className={cn("group flex flex-col bg-card rounded-xl overflow-hidden border border-border/50 card-hover h-full", className)}>
+    <div className={cn("group flex flex-col bg-card rounded-[2rem] overflow-hidden border border-border/50 card-hover h-full", className)}>
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+      <div className="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.8rem]">
         <img 
           src={imageUrl} 
           alt={listing.title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
         />
         
         {/* Status Badge */}
         <div className="absolute top-3 left-3">
           <span className={cn(
-            "px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider shadow-sm",
+            "px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg backdrop-blur-md",
             listing.type === 'sale' 
-              ? "bg-primary text-primary-foreground" 
-              : "bg-secondary text-secondary-foreground"
+              ? "bg-primary/90 text-white" 
+              : "bg-black/40 text-white"
           )}>
-            {listing.type === 'sale' ? 'À Vendre' : 'À Louer'}
+            {listing.type === 'sale' ? 'Vente' : 'Location'}
           </span>
         </div>
 
         {/* Price Tag */}
         <div className="absolute bottom-3 right-3">
-          <span className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg font-bold text-primary shadow-lg">
-            {listing.price.toLocaleString()} {listing.currency}
-            {listing.type === 'rent' && <span className="text-sm font-normal text-muted-foreground">/mois</span>}
+          <span className="bg-white/95 backdrop-blur-sm px-5 py-2.5 rounded-2xl font-bold text-foreground shadow-xl border border-white/50">
+            {listing.price.toLocaleString()} <span className="text-primary">{listing.currency}</span>
+            {listing.type === 'rent' && <span className="text-xs font-medium text-muted-foreground">/mois</span>}
           </span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-grow">
-        <div className="flex justify-between items-start mb-2">
-          <p className="text-xs font-semibold text-secondary uppercase tracking-widest">{listing.category}</p>
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex justify-between items-start mb-3">
+          <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{listing.category}</p>
         </div>
 
-        <h3 className="text-xl font-bold text-primary mb-2 line-clamp-1 group-hover:text-secondary transition-colors">
+        <h3 className="text-2xl font-display font-bold text-foreground mb-2 line-clamp-1">
           {listing.title}
         </h3>
 
-        <div className="flex items-center text-muted-foreground mb-4">
-          <MapPin className="w-4 h-4 mr-1 flex-shrink-0" />
-          <p className="text-sm line-clamp-1">{listing.district}, {listing.city}</p>
+        <div className="flex items-center text-muted-foreground mb-6">
+          <MapPin className="w-4 h-4 mr-1.5 text-primary flex-shrink-0" />
+          <p className="text-sm font-medium">{listing.district}, {listing.city}</p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-3 gap-2 py-4 border-t border-border mt-auto">
-          <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-muted/50">
-            <BedDouble className="w-4 h-4 text-primary mb-1" />
-            <span className="text-xs font-medium">{listing.bedrooms} Ch.</span>
+        <div className="grid grid-cols-3 gap-3 py-5 border-y border-border/50 mt-auto">
+          <div className="flex flex-col items-center gap-1">
+            <BedDouble className="w-5 h-5 text-primary" />
+            <span className="text-xs font-bold">{listing.bedrooms}</span>
           </div>
-          <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-muted/50">
-            <Bath className="w-4 h-4 text-primary mb-1" />
-            <span className="text-xs font-medium">{listing.bathrooms} Dou.</span>
+          <div className="flex flex-col items-center gap-1">
+            <Bath className="w-5 h-5 text-primary" />
+            <span className="text-xs font-bold">{listing.bathrooms}</span>
           </div>
-          <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-muted/50">
-            <Square className="w-4 h-4 text-primary mb-1" />
-            <span className="text-xs font-medium">{listing.area} m²</span>
+          <div className="flex flex-col items-center gap-1">
+            <Square className="w-5 h-5 text-primary" />
+            <span className="text-xs font-bold">{listing.area}m²</span>
           </div>
         </div>
 
-        <Link href={`/listings/${listing.id}`} className="mt-4 w-full">
-          <button className="w-full py-3 rounded-lg border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group/btn">
-            Voir les détails
-            <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
+        <Link href={`/listings/${listing.id}`} className="mt-6 w-full">
+          <button className="w-full py-4 rounded-2xl bg-foreground text-white font-bold hover:bg-primary transition-all duration-500 flex items-center justify-center gap-3 group/btn shadow-xl shadow-foreground/10 hover:shadow-primary/30 active:scale-95">
+            Détails du bien
+            <ArrowRight className="w-5 h-5 transform group-hover/btn:translate-x-2 transition-transform duration-500" />
           </button>
         </Link>
       </div>
