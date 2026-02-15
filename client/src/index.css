@@ -69,15 +69,56 @@
   }
 }
 
-/* 2026 UI Trends & Burkina Patterns */
+/* 2026 UI Trends: Organic & Asymmetric */
+.blob-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.text-grainy {
+  position: relative;
+}
+
+.text-grainy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.asymmetric-grid > *:nth-child(odd) {
+  grid-column: span 7;
+}
+
+.asymmetric-grid > *:nth-child(even) {
+  grid-column: span 5;
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .asymmetric-grid > * {
+    grid-column: span 12 !important;
+    margin-top: 0 !important;
+  }
+}
+
 .pattern-danfani {
   background-image: repeating-linear-gradient(
-    45deg,
+    -45deg,
     transparent,
-    transparent 10px,
-    rgba(212, 123, 30, 0.05) 10px,
-    rgba(212, 123, 30, 0.05) 20px
+    transparent 15px,
+    rgba(212, 123, 30, 0.08) 15px,
+    rgba(212, 123, 30, 0.08) 30px
   );
+  mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 .glass-panel {

@@ -33,16 +33,16 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 glass-panel rounded-2xl shadow-xl border border-white/20">
-      <div className="px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-lg shadow-primary/20">
-              <span className="text-white font-serif font-bold text-xl">FH</span>
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50 glass-panel rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/40 px-2 py-2">
+      <div className="px-6">
+        <div className="flex justify-between h-14 items-center">
+          {/* Logo - Asymmetric & Modern */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-11 h-11 bg-foreground rounded-[1.2rem] flex items-center justify-center -rotate-6 group-hover:rotate-0 transition-all duration-700 shadow-xl group-hover:bg-primary">
+              <span className="text-white font-serif font-bold text-xl">F</span>
             </div>
-            <span className="font-display font-bold text-xl md:text-2xl text-foreground tracking-tight">
-              Faso<span className="text-primary">Habita</span>
+            <span className="font-display font-black text-2xl text-foreground tracking-tighter uppercase">
+              Faso<span className="text-primary italic lowercase">Habita</span>
             </span>
           </Link>
 

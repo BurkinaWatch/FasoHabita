@@ -18,73 +18,70 @@ export function ListingCard({ listing, className }: ListingCardProps) {
   const imageUrl = mainImage?.url || placeholderImage;
 
   return (
-    <div className={cn("group flex flex-col bg-card rounded-[2rem] overflow-hidden border border-border/50 card-hover h-full", className)}>
-      {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden m-2 rounded-[1.8rem]">
+    <div className={cn("group flex flex-col bg-white rounded-[3rem] overflow-hidden border border-border/30 shadow-sm hover:shadow-2xl transition-all duration-700 h-full relative", className)}>
+      <div className="absolute top-6 right-6 z-10">
+        <div className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg cursor-pointer hover:bg-primary hover:text-white transition-colors">
+          <ArrowRight className="w-5 h-5 -rotate-45" />
+        </div>
+      </div>
+      
+      {/* Image Container - Organic Mask */}
+      <div className="relative aspect-[4/5] overflow-hidden m-3 rounded-[2.5rem]">
         <img 
           src={imageUrl} 
           alt={listing.title} 
-          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
         />
         
-        {/* Status Badge */}
-        <div className="absolute top-3 left-3">
+        {/* Type Badge - Floating */}
+        <div className="absolute bottom-6 left-6">
           <span className={cn(
-            "px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg backdrop-blur-md",
+            "px-5 py-2 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-2xl backdrop-blur-xl border border-white/20",
             listing.type === 'sale' 
-              ? "bg-primary/90 text-white" 
-              : "bg-black/40 text-white"
+              ? "bg-primary text-white" 
+              : "bg-foreground text-white"
           )}>
-            {listing.type === 'sale' ? 'Vente' : 'Location'}
-          </span>
-        </div>
-
-        {/* Price Tag */}
-        <div className="absolute bottom-3 right-3">
-          <span className="bg-white/95 backdrop-blur-sm px-5 py-2.5 rounded-2xl font-bold text-foreground shadow-xl border border-white/50">
-            {listing.price.toLocaleString()} <span className="text-primary">{listing.currency}</span>
-            {listing.type === 'rent' && <span className="text-xs font-medium text-muted-foreground">/mois</span>}
+            {listing.type === 'sale' ? 'Propriété' : 'Location'}
           </span>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-between items-start mb-3">
-          <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">{listing.category}</p>
-        </div>
+      {/* Content - Typographic Focus */}
+      <div className="p-8 pt-4 flex flex-col flex-grow">
+        <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+          <span className="w-4 h-[1px] bg-primary" />
+          {listing.category}
+        </p>
 
-        <h3 className="text-2xl font-display font-bold text-foreground mb-2 line-clamp-1">
+        <h3 className="text-3xl font-display font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors">
           {listing.title}
         </h3>
 
-        <div className="flex items-center text-muted-foreground mb-6">
-          <MapPin className="w-4 h-4 mr-1.5 text-primary flex-shrink-0" />
-          <p className="text-sm font-medium">{listing.district}, {listing.city}</p>
+        <div className="flex items-center text-muted-foreground mb-8">
+          <MapPin className="w-4 h-4 mr-2 text-primary" />
+          <p className="text-sm font-bold tracking-tight">{listing.district}, {listing.city}</p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-3 gap-3 py-5 border-y border-border/50 mt-auto">
-          <div className="flex flex-col items-center gap-1">
-            <BedDouble className="w-5 h-5 text-primary" />
-            <span className="text-xs font-bold">{listing.bedrooms}</span>
+        {/* Features - Minimalist */}
+        <div className="flex gap-8 mb-8">
+          <div className="flex items-baseline gap-1">
+            <span className="text-2xl font-display font-bold text-foreground">{listing.bedrooms}</span>
+            <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">Ch.</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
-            <Bath className="w-5 h-5 text-primary" />
-            <span className="text-xs font-bold">{listing.bathrooms}</span>
-          </div>
-          <div className="flex flex-col items-center gap-1">
-            <Square className="w-5 h-5 text-primary" />
-            <span className="text-xs font-bold">{listing.area}m²</span>
+          <div className="flex items-baseline gap-1">
+            <span className="text-2xl font-display font-bold text-foreground">{listing.area}</span>
+            <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">m²</span>
           </div>
         </div>
 
-        <Link href={`/listings/${listing.id}`} className="mt-6 w-full">
-          <button className="w-full py-4 rounded-2xl bg-foreground text-white font-bold hover:bg-primary transition-all duration-500 flex items-center justify-center gap-3 group/btn shadow-xl shadow-foreground/10 hover:shadow-primary/30 active:scale-95">
-            Détails du bien
-            <ArrowRight className="w-5 h-5 transform group-hover/btn:translate-x-2 transition-transform duration-500" />
-          </button>
-        </Link>
+        <div className="mt-auto flex items-center justify-between border-t border-border/50 pt-6">
+          <p className="text-2xl font-black text-foreground tracking-tighter">
+            {listing.price.toLocaleString()} <span className="text-primary text-sm font-bold uppercase ml-1">{listing.currency}</span>
+          </p>
+          <Link href={`/listings/${listing.id}`}>
+            <span className="text-[10px] font-black uppercase tracking-widest text-primary cursor-pointer hover:underline">Détails</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

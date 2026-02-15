@@ -32,100 +32,90 @@ export default function Home() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative pt-20 lg:pt-0 lg:h-[800px] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-           {/* Luxury African Villa */}
-          <img 
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" 
-            alt="Hero Background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40" />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
+      {/* Hero Section - Unique Asymmetric Layout */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#FAF9F6] text-grainy">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/4" />
+        
+        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-[1.1] tracking-tight">
-              L'immobilier <br />
-              <span className="text-primary italic">Réinventé</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-widest uppercase mb-8">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              L'immobilier d'exception
+            </div>
+            <h1 className="text-6xl md:text-8xl font-display font-bold text-foreground mb-8 leading-[0.9] tracking-tighter">
+              Habitez <br />
+              <span className="text-primary italic">L'Authentique.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-10 font-light max-w-xl mx-auto">
-              Votre porte d'entrée vers les plus beaux biens immobiliers au cœur du Burkina Faso.
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 font-light max-w-lg leading-relaxed">
+              Plus qu'une maison, nous trouvons le décor de votre prochaine histoire au Burkina Faso.
             </p>
+            
+            <div className="flex flex-wrap gap-6">
+              <Button className="h-16 px-10 bg-foreground text-white rounded-2xl text-lg font-bold hover:bg-primary transition-all duration-500 shadow-2xl shadow-foreground/20">
+                Découvrir les biens
+              </Button>
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+                  <ArrowRight className="w-6 h-6 text-primary group-hover:translate-x-1 transition-transform" />
+                </div>
+                <span className="font-bold text-foreground uppercase tracking-widest text-sm">Voir la vidéo</span>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Search Card - Floating Modern Design */}
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full max-w-5xl glass-panel p-2 rounded-3xl shadow-2xl"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
           >
-            <div className="bg-white/90 rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-4 items-end">
-              <div className="flex-1 w-full space-y-2 text-left">
-                <label className="text-[10px] font-bold uppercase text-primary tracking-[0.2em] ml-1">Type de bien</label>
-                <Select 
-                  value={searchParams.type} 
-                  onValueChange={(val) => setSearchParams(prev => ({ ...prev, type: val }))}
-                >
-                  <SelectTrigger className="h-14 border-none bg-muted/20 rounded-xl focus:ring-2 focus:ring-primary/20">
-                    <SelectValue placeholder="Type" />
-                  </SelectTrigger>
-                  <SelectContent className="rounded-xl">
-                    <SelectItem value="rent">À Louer</SelectItem>
-                    <SelectItem value="sale">À Acheter</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="flex-1 w-full space-y-2 text-left">
-                <label className="text-[10px] font-bold uppercase text-primary tracking-[0.2em] ml-1">Où cherchez-vous ?</label>
-                <div className="relative">
-                  <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <Input 
-                    placeholder="Ville, Quartier..." 
-                    className="h-14 pl-12 border-none bg-muted/20 rounded-xl focus:ring-2 focus:ring-primary/20"
-                    value={searchParams.location}
-                    onChange={(e) => setSearchParams(prev => ({ ...prev, location: e.target.value }))}
-                  />
-                </div>
-              </div>
-
-              <div className="flex-1 w-full space-y-2 text-left">
-                <label className="text-[10px] font-bold uppercase text-primary tracking-[0.2em] ml-1">Catégorie</label>
-                <Select
-                  value={searchParams.category}
-                  onValueChange={(val) => setSearchParams(prev => ({ ...prev, category: val }))}
-                >
-                  <SelectTrigger className="h-14 border-none bg-muted/20 rounded-xl focus:ring-2 focus:ring-primary/20">
-                    <SelectValue placeholder="Toutes catégories" />
-                  </SelectTrigger>
-                  <SelectContent className="rounded-xl">
-                    <SelectItem value="villa">Villa</SelectItem>
-                    <SelectItem value="apartment">Appartement</SelectItem>
-                    <SelectItem value="studio">Studio</SelectItem>
-                    <SelectItem value="land">Terrain</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <Button 
-                onClick={handleSearch}
-                className="h-14 px-10 bg-primary hover:bg-primary/90 text-white w-full md:w-auto text-lg rounded-xl shadow-xl shadow-primary/20 transition-all active:scale-95"
-              >
-                Explorer
-              </Button>
+            <div className="relative z-10 w-full aspect-[4/5] overflow-hidden blob-shape shadow-2xl border-8 border-white">
+              <img 
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop" 
+                alt="Architecture Burkinabè" 
+                className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-1000"
+              />
+            </div>
+            <div className="absolute -bottom-10 -left-10 w-48 h-48 pattern-danfani rounded-full z-0" />
+            <div className="absolute top-1/2 -right-8 w-16 h-16 bg-primary rounded-2xl rotate-12 flex items-center justify-center shadow-xl">
+              <HomeIcon className="w-8 h-8 text-white" />
             </div>
           </motion.div>
         </div>
       </section>
+
+      {/* Floating Search Bar */}
+      <div className="container mx-auto px-4 -mt-12 relative z-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="bg-white p-3 rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-border/50"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+            <div className="px-6 py-4 rounded-3xl hover:bg-muted/30 transition-colors cursor-pointer group">
+              <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Catégorie</p>
+              <p className="font-bold text-foreground group-hover:text-primary transition-colors">Villa Moderne</p>
+            </div>
+            <div className="px-6 py-4 rounded-3xl hover:bg-muted/30 transition-colors cursor-pointer group border-l border-border/50">
+              <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Localisation</p>
+              <p className="font-bold text-foreground group-hover:text-primary transition-colors">Ouaga 2000</p>
+            </div>
+            <div className="px-6 py-4 rounded-3xl hover:bg-muted/30 transition-colors cursor-pointer group border-l border-border/50">
+              <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Budget Max</p>
+              <p className="font-bold text-foreground group-hover:text-primary transition-colors">500.000 FCFA</p>
+            </div>
+            <Button className="h-full rounded-3xl bg-primary hover:bg-primary/90 text-white font-bold text-lg shadow-xl shadow-primary/20">
+              <Search className="w-5 h-5 mr-2" />
+              Rechercher
+            </Button>
+          </div>
+        </motion.div>
+      </div>
 
       {/* Featured Properties with Pattern Decor */}
       <section className="py-24 bg-background relative overflow-hidden">
@@ -152,15 +142,15 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="asymmetric-grid">
               {featuredListings.map((listing) => (
                 <ListingCard key={listing.id} listing={listing} />
               ))}
               {featuredListings.length === 0 && (
-                <div className="col-span-3 text-center py-20 bg-white rounded-[2.5rem] border-2 border-dashed border-border/50">
-                  <p className="text-muted-foreground text-xl">Aucune annonce trouvée pour le moment.</p>
+                <div className="col-span-12 text-center py-20 bg-white rounded-[3rem] border-2 border-dashed border-primary/20">
+                  <p className="text-muted-foreground text-xl italic font-serif">Votre futur sanctuaire vous attend encore...</p>
                   <Link href="/create-listing">
-                    <Button className="mt-6 rounded-xl" variant="outline">Publier la première annonce</Button>
+                    <Button className="mt-8 rounded-2xl h-14 px-8" variant="outline">Devenez le premier annonceur</Button>
                   </Link>
                 </div>
               )}
