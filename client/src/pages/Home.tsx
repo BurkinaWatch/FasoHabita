@@ -47,16 +47,16 @@ export default function Home() {
               L'immobilier d'exception
             </div>
             <h1 className="text-6xl md:text-8xl font-display font-bold text-foreground mb-8 leading-[0.9] tracking-tighter">
-              Le Faso <br />
-              <span className="text-primary italic">À Votre Portée.</span>
+              Habitez <br />
+              <span className="text-primary italic">L'Authentique.</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 font-light max-w-lg leading-relaxed">
-              Découvrez l'élégance de l'immobilier Burkinabè. Trouvez votre foyer idéal au pays des hommes intègres.
+              Plus qu'une maison, nous trouvons le décor de votre prochaine histoire au Burkina Faso.
             </p>
             
             <div className="flex flex-wrap gap-6">
-              <Button className="h-16 px-10 bg-primary text-white rounded-2xl text-lg font-bold hover:bg-secondary transition-all duration-500 shadow-2xl shadow-primary/20">
-                Trouver mon bien
+              <Button className="h-16 px-10 bg-foreground text-white rounded-2xl text-lg font-bold hover:bg-primary transition-all duration-500 shadow-2xl shadow-foreground/20">
+                Découvrir les biens
               </Button>
               <div className="flex items-center gap-4 group cursor-pointer">
                 <div className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center group-hover:bg-primary/5 transition-colors">
@@ -75,8 +75,8 @@ export default function Home() {
           >
             <div className="relative z-10 w-full aspect-[4/5] overflow-hidden blob-shape shadow-2xl border-8 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1590001158193-79cd23445694?q=80&w=2070&auto=format&fit=crop" 
-                alt="Architecture Moderne Burkina" 
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2070&auto=format&fit=crop" 
+                alt="Architecture Burkinabè" 
                 className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-1000"
               />
             </div>

@@ -8,52 +8,51 @@
   --font-body: 'DM Sans', sans-serif;
   --font-display: 'Playfair Display', serif;
 
-  /* Color Palette: Burkina Faso National Colors & Faso Dan Fani */
-  --background: 40 40% 98%;
-  --foreground: 120 20% 10%; /* Dark Forest Green */
+  /* Color Palette 2026: Earthy Burkina Tones */
+  /* Warm Sand/Beige */
+  --background: 35 30% 98%;
+  --foreground: 24 40% 10%; /* Deep Earth Brown */
 
-  /* Primary: Burkina Red (#EF2B2D) */
-  --primary: 0 84% 55%;
-  --primary-foreground: 0 0% 100%;
-  --primary-border: 0 84% 45%;
+  /* Primary: Burkina Saffron/Terracotta (#D47B1E) */
+  --primary: 32 75% 47%;
+  --primary-foreground: 60 30% 98%;
 
-  /* Secondary: Burkina Green (#009E49) */
-  --secondary: 148 100% 31%;
+  /* Secondary: Sahel Green (#2D5A27) */
+  --secondary: 112 39% 25%;
   --secondary-foreground: 0 0% 100%;
-  --secondary-border: 148 100% 25%;
 
-  /* Accent: Burkina Yellow/Gold (#FFCD00) */
-  --accent: 48 100% 50%; 
-  --accent-foreground: 120 20% 10%;
-  --accent-border: 48 100% 40%;
-
-  --muted: 120 10% 95%;
-  --muted-foreground: 120 10% 40%;
+  /* Muted/Clay (#E2D1C3) */
+  --muted: 24 25% 90%;
+  --muted-foreground: 24 20% 40%;
 
   --card: 0 0% 100%;
-  --card-foreground: 120 20% 10%;
+  --card-foreground: 24 40% 10%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 120 20% 10%;
+  --popover-foreground: 24 40% 10%;
 
-  --border: 120 10% 90%;
-  --input: 120 10% 90%;
+  --border: 24 20% 88%;
+  --input: 24 20% 88%;
   
-  --ring: 0 84% 55%;
-  --radius: 0.75rem;
+  --accent: 45 80% 90%; /* Golden highlight */
+  --accent-foreground: 24 40% 10%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --ring: 32 75% 47%;
+  --radius: 1rem; /* Generous 2026 rounding */
 }
 
 .dark {
-  --background: 120 20% 5%;
-  --foreground: 40 40% 98%;
-  --primary: 0 84% 55%; 
-  --primary-foreground: 0 0% 100%;
-  --secondary: 148 100% 31%;
-  --accent: 48 100% 50%;
-  --card: 120 20% 8%;
-  --card-foreground: 40 40% 98%;
-  --border: 120 20% 15%;
-  --input: 120 20% 15%;
+  --background: 24 40% 5%;
+  --foreground: 35 30% 98%;
+  --primary: 32 75% 47%; 
+  --primary-foreground: 60 30% 98%;
+  --card: 24 40% 8%;
+  --card-foreground: 35 30% 98%;
+  --border: 24 30% 15%;
+  --input: 24 30% 15%;
 }
 
 @layer base {
@@ -113,20 +112,13 @@
 
 .pattern-danfani {
   background-image: repeating-linear-gradient(
-    90deg,
+    -45deg,
     transparent,
-    transparent 20px,
-    rgba(239, 43, 45, 0.1) 20px,
-    rgba(239, 43, 45, 0.1) 22px,
-    transparent 22px,
-    transparent 40px,
-    rgba(0, 158, 73, 0.1) 40px,
-    rgba(0, 158, 73, 0.1) 42px
+    transparent 15px,
+    rgba(212, 123, 30, 0.08) 15px,
+    rgba(212, 123, 30, 0.08) 30px
   );
-}
-
-.burkina-gradient {
-  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
+  mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 .glass-panel {
